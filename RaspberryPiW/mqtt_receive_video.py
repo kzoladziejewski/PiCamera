@@ -10,12 +10,12 @@ class MQTTSenderPicture():
     def __init__(self):
         self.broker="80.211.195.240"
         self.port=1883
-        self.client1= mqtt.Client('a')
+        self.client1= mqtt.Client('ArubaVideoCLient')
         self.client1.connect(self.broker,self.port)
         self.client1.on_connect = self.on_connect
         self.client1.on_log = self.on_log
         self.client1.on_message = self.on_message
-        self.client1.subscribe("testowy_video")
+        self.client1.subscribe("video")
         self.guard = 0
         self.picture_data = []
         while True:
